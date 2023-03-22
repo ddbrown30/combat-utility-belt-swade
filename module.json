@@ -1,6 +1,6 @@
 {
-  "id": "combat-utility-belt",
-  "title": "Combat Utility Belt",
+  "id": "combat-utility-belt-swade",
+  "title": "Combat Utility Belt - SWADE",
   "description": "Adds various combat-focused features",
   "version": "1.10.4",
   "authors": [
@@ -13,11 +13,11 @@
       "reddit": "u/etherboy12"
     }
   ],
-  "url": "https://github.com/death-save/combat-utility-belt",
+  "url": "https://github.com/ddbrown30/combat-utility-belt-swade",
   "bugs": "https://github.com/death-save/combat-utility-belt/issues",
   "readme": "https://github.com/death-save/combat-utility-belt/wiki",
-  "manifest": "https://github.com/death-save/combat-utility-belt/releases/latest/download/module.json",
-  "download": "https://github.com/death-save/combat-utility-belt/releases/latest/download/module.zip",
+  "manifest": "https://github.com/ddbrown30/combat-utility-belt-swade/releases/latest/download/module.json",
+  "download": "https://github.com/ddbrown30/combat-utility-belt-swade/releases/latest/download/module.zip",
   "scripts": [
     "library/typewriterjs/core.js"
   ],
@@ -105,6 +105,6 @@
     "minimum": "10.270",
     "verified": "10.291"
   },
-  "name": "combat-utility-belt",
+  "name": "combat-utility-belt-swade",
   "minimumCoreVersion": "10.270"
 }
