@@ -1,6 +1,7 @@
 import * as BUTLER from "../butler.js";
 import { ConditionLab } from "./condition-lab.js";
 import { Sidekick } from "../sidekick.js";
+import { effect_updater } from "./effect_updater.js"
 
 /**
  * Builds a mapping between status icons and journal entries that represent conditions
@@ -226,7 +227,9 @@ export class EnhancedConditions {
         // Handled in Token Update handler
         if (actor?.isToken) return;
 
-        EnhancedConditions._processActiveEffectChange(effect, "create");
+        EnhancedConditions._processActiveEffectChange(effect, "create", userId);
+		
+		effect_updater(effect, userId);
     }
 
     /**
@@ -248,7 +251,7 @@ export class EnhancedConditions {
         // Handled in Token Update handler
         if (actor?.isToken) return;
 
-        EnhancedConditions._processActiveEffectChange(effect, "delete");
+        EnhancedConditions._processActiveEffectChange(effect, "delete", userId);
     }
 
     /**
@@ -398,7 +401,7 @@ export class EnhancedConditions {
      * @param {ActiveEffect} effect  the effect
      * @param {String} type  the type of change to process
      */
-    static _processActiveEffectChange(effect, type="create") {
+    static _processActiveEffectChange(effect, type="create", userId) {
         if (!(effect instanceof ActiveEffect)) return;
         
         const effectId = effect.getFlag(`${BUTLER.NAME}`, `${BUTLER.FLAGS.enhancedConditions.conditionId}`);
@@ -519,6 +522,7 @@ export class EnhancedConditions {
             conditions: entries,
             isOwner: entity.isOwner || game.user.isGM
         };
+				console.log(templateData)
 
 
 
